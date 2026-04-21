@@ -26,12 +26,12 @@ All results are reported over five random seeds with mean F1 ± standard deviati
 │   └── eq-5d-2000-unique-random.csv        # 2,000 unlabeled PubMed records
 │
 ├── pipelines/
-│   ├── 1_training_from_scratch.py          # Supervised training from scratch
-│   ├── 2_fine_tuning.py                    # MLM pre-training + fine-tuning
-│   ├── 3_semi_supervised.py                # Semi-supervised teacher-student learning
-│   ├── 4_co_training.py                    # Co-training without LLM
-│   ├── 5_gpt_co_training.py                # Co-training with GPT-4o-mini
-│   └── 6_claude_co_training.py             # Co-training with Claude Haiku 4.5
+│   ├── 1_training_from_scratch.ipynb          # Supervised training from scratch
+│   ├── 2_fine_tuning.ipynb                    # MLM pre-training + fine-tuning
+│   ├── 3_semi_supervised.ipynb                # Semi-supervised teacher-student learning
+│   ├── 4_co_training.ipynb                    # Co-training without LLM
+│   ├── 5_gpt_co_training.ipynb                # Co-training with GPT-4o-mini
+│   └── 6_claude_co_training.ipynb             # Co-training with Claude Haiku 4.5
 │
 ├── results/                                # Output directory (auto-created)
 ├── cache/                                  # LLM response cache (auto-created)
