@@ -33,8 +33,7 @@ All results are reported over five random seeds with mean F1 ± standard deviati
 │   ├── 5_gpt_co_training.ipynb                # Co-training with GPT-4o-mini
 │   └── 6_claude_co_training.ipynb             # Co-training with Claude Haiku 4.5
 │
-├── results/                                # Output directory (auto-created)
-├── cache/                                  # LLM response cache (auto-created)
+├── 
 ├── requirements.txt
 └── README.md
 ```
