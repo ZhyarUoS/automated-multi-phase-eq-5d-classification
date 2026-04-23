@@ -33,7 +33,11 @@ All results are reported over five random seeds with mean F1 ± standard deviati
 │   ├── 5_gpt_co_training.ipynb                # Co-training with GPT-4o-mini
 │   └── 6_claude_co_training.ipynb             # Co-training with Claude Haiku 4.5
 │
-├── 
+├── agreements_figs/
+│   ├── 01_agreement_plot_semi-supervised_models.pdf          # Agreement plot - semi-supervised
+│   ├── 02_agreement_plot_without_llm_revision.pdf            # Agreement plot - co-training (alone)
+│   ├── 03_agreement_plot_gpt_revision.pdf                    # Agreement plot - co-training (with gpt)
+│   ├── 04_agreement_plot_claude_revision.pdf                 # Agreement plot - co-training (with claude)
 ├── requirements.txt
 └── README.md
 ```
