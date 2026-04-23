@@ -124,7 +124,7 @@ Obtain your key at: https://console.anthropic.com/
 
 ## Model Selection
 
-All pipelines support the following models. Set `selected_model` (Pipelines 1–3) or `MODEL_1_NAME` / `MODEL_2_NAME` (Pipelines 4–6) at the top of each script:
+All pipelines support the following models.
 
 | Key | Model | HuggingFace ID |
 |-----|-------|----------------|
