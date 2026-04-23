@@ -1,4 +1,4 @@
-# Automated Classification of EQ-5D Literature in PubMed
+# Automated Classification of EQ-5D
 
 > **Note:** This repository accompanies a manuscript currently under review.  
 > Please cite the repository if you use this code or data in your research.
