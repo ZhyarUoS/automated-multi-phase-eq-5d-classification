@@ -1,7 +1,8 @@
 # Automated Classification of EQ-5D
 
-> **Note:** This repository accompanies a manuscript currently under review.  
-> Please cite the repository if you use this code or data in your research.
+> **Published in IEEE Access** — Z. K. R. Rostam, M. Péntek, J. T. Czere, Z. Zrubka, L. Gulácsi and G. Kertész, "Automated Classification of EQ-5D Literature in PubMed Using Multi-Phase Learning and LLM-Assisted Co-Training," *IEEE Access*, vol. 14, pp. 81665–81685, 2026.  
+> 🔗 [View on IEEE Xplore](https://ieeexplore.ieee.org/abstract/document/11535804) · DOI: [10.1109/ACCESS.2026.3697415](https://doi.org/10.1109/ACCESS.2026.3697415)
+
 
 ---
 
@@ -15,6 +16,26 @@ This repository provides the complete implementation of a multi-phase classifica
 4. **LLM-Assisted Co-Training** — Three-way majority voting with GPT-4o-mini and Claude Haiku 4.5
 
 All results are reported over five random seeds with mean F1 ± standard deviation and 95% confidence intervals.
+
+---
+
+## Citation
+
+If you use this code or data in your research, please cite the published paper:
+
+```bibtex
+@article{rostam2026eq5d,
+  author  = {Rostam, Zhyar Rzgar K. and Péntek, Márta and Czere, János Tamás and Zrubka, Zsombor and Gulácsi, László and Kertész, Gábor},
+  title   = {Automated Classification of {EQ-5D} Literature in {PubMed} Using Multi-Phase Learning and {LLM}-Assisted Co-Training},
+  journal = {IEEE Access},
+  year    = {2026},
+  volume  = {14},
+  pages   = {81665--81685},
+  doi     = {10.1109/ACCESS.2026.3697415}
+}
+```
+
+The paper is available at: https://ieeexplore.ieee.org/abstract/document/11535804
 
 ---
 
@@ -97,7 +118,7 @@ Each record contains:
 ## API Keys Setup
 
 ### GPT-4o-mini (OpenAI)
-Required for **Pipeline 5** only (`5_gpt_co_training.py`).
+Required for **Pipeline 5** only (`5_gpt_co_training.ipynb`).
 
 Open the file and replace the placeholder:
 ```python
@@ -107,7 +128,7 @@ client = OpenAI(api_key="your-openai-api-key-here")
 Obtain your key at: https://platform.openai.com/api-keys
 
 ### Claude Haiku 4.5 (Anthropic)
-Required for **Pipeline 6** only (`6_claude_co_training.py`).
+Required for **Pipeline 6** only (`6_claude_co_training.ipynb`).
 
 Open the file and replace the placeholder:
 ```python
@@ -170,10 +191,7 @@ CLS_EPOCHS     = 100
 PATIENCE       = 10
 ```
 
-**Run:**
-```bash
-python pipelines/1_training_from_scratch.py
-```
+**Run:** Open `pipelines/1_training_from_scratch.ipynb` in Jupyter or Google Colab and run all cells.
 
 **Output:**
 - Per-seed F1 scores and accuracy
@@ -197,10 +215,7 @@ CLS_EPOCHS     = 100
 PATIENCE       = 10
 ```
 
-**Run:**
-```bash
-python pipelines/2_fine_tuning.py
-```
+**Run:** Open `pipelines/2_fine_tuning.ipynb` in Jupyter or Google Colab and run all cells.
 
 **Output:**
 - MLM pre-trained weights saved to `results/`
@@ -228,10 +243,7 @@ MAX_PSEUDO_PER_CLASS = 250
 UNSUP_WEIGHT         = 0.10
 ```
 
-**Run:**
-```bash
-python pipelines/3_semi_supervised.py
-```
+**Run:** Open `pipelines/3_semi_supervised.ipynb` in Jupyter or Google Colab and run all cells.
 
 **Output:**
 - Unlabeled predictions with confidence scores saved to `results/`
@@ -273,10 +285,7 @@ LR_LIST               = [1e-5, 2e-5, 3e-5, 5e-5]
 | BERT ↔ BioLinkBERT | | PubMedBERT ↔ BioLinkBERT |
 | SciBERT ↔ BioBERT | | SciBERT ↔ PubMedBERT |
 
-**Run:**
-```bash
-python pipelines/4_co_training.py
-```
+**Run:** Open `pipelines/4_co_training.ipynb` in Jupyter or Google Colab and run all cells.
 
 **Output:**
 - Ensemble pseudo-labels with probabilities saved to `results/`
@@ -301,10 +310,7 @@ CACHE_PATH   = "cache/gpt_cache.json"
 
 > **Cost note:** The estimated first-run annotation cost for 2,000 records is approximately **$0.1559** for GPT-4o-mini. All subsequent runs are served from the MD5-based cache at no additional cost.
 
-**Run:**
-```bash
-python pipelines/5_gpt_co_training.py
-```
+**Run:** Open `pipelines/5_gpt_co_training.ipynb` in Jupyter or Google Colab and run all cells.
 
 **Output:**
 - Same as Pipeline 4
@@ -328,10 +334,7 @@ CACHE_PATH   = "cache/claude_cache.json"
 
 > **Cost note:** The estimated first-run annotation cost for 2,000 records is approximately **$1.1780** for Claude Haiku 4.5. All subsequent runs are served from the MD5-based cache at no additional cost.
 
-**Run:**
-```bash
-python pipelines/6_claude_co_training.py
-```
+**Run:** Open `pipelines/6_claude_co_training.ipynb` in Jupyter or Google Colab and run all cells.
 
 **Output:**
 - Same as Pipeline 4
@@ -356,8 +359,6 @@ For LLM-assisted pipelines, reproducibility is further ensured by:
 
 ---
 
-
-
 ## Notes
 
 - All pipelines are designed to run on **Google Colab** with GPU support. Minor path adjustments may be needed for local execution.
@@ -371,7 +372,6 @@ For LLM-assisted pipelines, reproducibility is further ensured by:
 - LLM response caches (`gpt_cache.json`, `claude_cache.json`) are stored in the `cache/` folder and persist across runs. Delete the cache file to force fresh API calls.
 
 ---
-
 
 ## Contact
 
