@@ -1,4 +1,4 @@
-# Automated Classification of EQ-5D
+# Automated Classification of EQ-5D Literature in PubMed Using Multi-Phase Learning and LLM-Assisted Co-Training
 
 > **Published in IEEE Access** — Z. K. R. Rostam, M. Péntek, J. T. Czere, Z. Zrubka, L. Gulácsi and G. Kertész, "Automated Classification of EQ-5D Literature in PubMed Using Multi-Phase Learning and LLM-Assisted Co-Training," *IEEE Access*, vol. 14, pp. 81665–81685, 2026.  
 > 🔗 [View on IEEE Xplore](https://ieeexplore.ieee.org/abstract/document/11535804) · DOI: [10.1109/ACCESS.2026.3697415](https://doi.org/10.1109/ACCESS.2026.3697415)
